@@ -18,6 +18,7 @@ function sendHoraireDay(bot) {
                     `
       
       horaires.splice(i, 1)
+      i--
     }
   }
 

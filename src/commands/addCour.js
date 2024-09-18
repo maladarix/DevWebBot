@@ -72,8 +72,6 @@ module.exports = {
 
     let horaires = GetHoraires()
     
-    if(horaires.some(horaire => horaire.numCour == hoistedOptions.find(option => option.name == "numero").value)) return sendError("Ce cour est déjà dans la BDD", interaction)
-    
     horaires.push(new Cour(
       hoistedOptions.find(option => option.name == "date").value, 
       hoistedOptions.find(option => option.name == "nom").value,
