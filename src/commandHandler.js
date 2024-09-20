@@ -13,6 +13,10 @@ function commandHandler(bot, interaction) {
     case "addclass":
       bot.commands.get("addclass").run(bot, interaction)
       break
+    
+    case "send":
+      bot.commands.get("send").run(bot, interaction)
+      break
   }
 }
 

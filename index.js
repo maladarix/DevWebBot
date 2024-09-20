@@ -33,7 +33,6 @@ bot.on("ready", async () => {
   
   console.log("bot online")
   console.log(new Date().toLocaleString());
-  sendHoraireDay(bot)
 });
 
 bot.on("interactionCreate", (interaction) => {
