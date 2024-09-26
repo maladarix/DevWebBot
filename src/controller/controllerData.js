@@ -7,6 +7,12 @@ function GetHoraires() {
   );
 }
 
+function getGroups() {
+  return JSON.parse(
+    fs.readFileSync(`${(__dirname, "./")}/data/groups.json`, "utf8")
+  );
+}
+
 function writeHoraire(horaires) {
   fs.writeFileSync(
     `${path.join(__dirname, "../../")}/data/horaire.json`,
@@ -29,4 +35,15 @@ function writeToday(horaires) {
   );
 }
 
-module.exports = { GetHoraires, writeHoraire, writeToday }
+function writeGroups(groups) {
+  fs.writeFileSync(
+    `${path.join(__dirname, "../../")}/data/groups.json`,
+    JSON.stringify(groups),
+    "utf8",
+    function (err) {
+      if (err) throw err;
+    }
+  );
+}
+
+module.exports = { GetHoraires, getGroups, writeHoraire, writeToday, writeGroups }

@@ -1,3 +1,5 @@
+const { addGroup } = require("./controller/functions/addGroup");
+
 function commandHandler(bot, interaction) {
   if (
     !interaction.isCommand() &&
@@ -16,6 +18,14 @@ function commandHandler(bot, interaction) {
     
     case "send":
       bot.commands.get("send").run(bot, interaction)
+      break
+
+    case "createproject":
+      bot.commands.get("createproject").run(bot, interaction)
+      break
+
+    case "addGroup":
+      addGroup(bot, interaction)
       break
   }
 }
