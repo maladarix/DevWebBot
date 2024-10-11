@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, ActionRowBuilder, ButtonBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, ActionRowBuilder, ButtonBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require("discord.js");
 
 module.exports = {
   data: addProject = new SlashCommandBuilder()
@@ -32,8 +32,20 @@ module.exports = {
     components: [
       new ActionRowBuilder()
       .addComponents(
+        new StringSelectMenuBuilder()
+        .setCustomId("teamSelector")
+        .setDisabled(true)
+        .setPlaceholder("Rejoindre une équipe")
+        .addOptions(
+          new StringSelectMenuOptionBuilder()
+          .setLabel("test")
+          .setValue("null")
+        )
+      ),
+      new ActionRowBuilder()
+      .addComponents(
         new ButtonBuilder()
-        .setCustomId(`addGroup/${interaction.member.id}/${interaction.options._hoistedOptions.find(option => option.name == "cour").value}`)
+        .setCustomId(`addGroup/${interaction.member.id}/${interaction.options._hoistedOptions.find(option => option.name == "cour").value}/${interaction.options._hoistedOptions.find(option => option.name == "nom").value}`)
         .setStyle("Success")
         .setLabel("Créer une équipe")
       )

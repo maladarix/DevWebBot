@@ -1,4 +1,4 @@
-const { addGroup } = require("./controller/functions/addGroup");
+const { addGroup, joinGroup } = require("./controller/functions/gestionGroupes");
 
 function commandHandler(bot, interaction) {
   if (
@@ -26,6 +26,10 @@ function commandHandler(bot, interaction) {
 
     case "addGroup":
       addGroup(bot, interaction)
+      break
+
+    case "teamSelector":
+      joinGroup(bot, interaction)
       break
   }
 }
