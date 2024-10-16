@@ -25,7 +25,7 @@ module.exports = {
   async run(bot, interaction) {
 
     interaction.reply({embeds: [new EmbedBuilder()
-    .setTitle(`Projet ${interaction.options._hoistedOptions[0].value}`)
+    .setTitle(`${interaction.options._hoistedOptions[0].value}`)
     .setDescription("*Aucune équipe pour le moment*")
     .setColor("#b8ff33")
     ],

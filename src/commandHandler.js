@@ -23,6 +23,10 @@ function commandHandler(bot, interaction) {
     case "createproject":
       bot.commands.get("createproject").run(bot, interaction)
       break
+      
+    case "endproject":
+      bot.commands.get("endproject").run(bot, interaction)
+      break
 
     case "addGroup":
       addGroup(bot, interaction)
@@ -31,6 +35,7 @@ function commandHandler(bot, interaction) {
     case "teamSelector":
       joinGroup(bot, interaction)
       break
+
   }
 }
 
